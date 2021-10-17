@@ -8,30 +8,25 @@
 
 <?php
 
-    echo "hello";
     echo "<h1>" . $_SESSION['loginName'] . "</h1>";
     echo "<h1>Your Reservations</h1>";
 
 ?>
 
 <div class="container">
-<div class="row">
-
-  <div class="col-md-4">
-      <div class="mx-auto" style="width: 16rem;">
-        <img class="card-img-top" src="img/queen.jpg" alt="Card image cap">
-      </div>
-  </div>
-
-  <div class="col-md-8">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Queen Magnolia All Suites Room</h5>
-        <p class="card-text">Flavor text</p>
-        <a href="#" class="btn btn-primary">Modify</a>
-      </div>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <div class="card mb-6" style="max-width: 540px;">
+        <div class="row no-gutters">
+            <div class="col-4">
+                <img src="img/queen.jpg" class="card-img" alt="..." width="100%" height="100%">
+            </div>
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title">Standard</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-</div>
 </div>
