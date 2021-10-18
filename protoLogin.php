@@ -4,7 +4,7 @@
     <br>
     <?php 
         if (isset($_GET['status'])) {
-            echo "<p> Incorrect username or password. Please try again.";
+            echo "<p>Incorrect username or password. Please try again.</p>";
         }
     ?>
     <div class="container">

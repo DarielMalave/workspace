@@ -6,14 +6,15 @@
     }
 ?>
 
+<div class="container">
+    
 <?php
 
-    echo "<h1>" . $_SESSION['loginName'] . "</h1>";
-    echo "<h1>Your Reservations</h1>";
+echo "<h1>" . $_SESSION['loginName'] . " (Your Profile)</h1>";
+echo "<h1>Your Reservations</h1>";
 
 ?>
 
-<div class="container">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <div class="card mb-6" style="max-width: 540px;">
         <div class="row no-gutters">
