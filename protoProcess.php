@@ -2,6 +2,8 @@
 
 $mysqli = new mysqli('localhost', 'root', '', 'userlog') or die(mysqli_error($mysqli));
 
+// ========================================================================
+// need to update conditional to not allow duplicate records in database
 if (isset($_POST['register'])) {
     $username = $_POST['enter_username'];
     $email = $_POST['enter_email'];
@@ -18,13 +20,11 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $result = $mysqli->query("SELECT * FROM users WHERE username='$username' AND password='$password'") or die($mysqli->error());
-    //pre_r($result);
 
     if ($result->num_rows == 1) {
-        // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "It works. Hooray.";
-            echo "<br> id: ". $row["id"]. " - Name: ". $row["username"]. " " . $row["email"] . " " . $row["password"] . "<br>";
+            //echo "It works. Hooray.";
+            //echo "<br> id: ". $row["id"]. " - Name: ". $row["username"]. " " . $row["email"] . " " . $row["password"] . "<br>";
             session_start();
             $_SESSION['loginName'] = $username;
             header("location: protoMain.php");
