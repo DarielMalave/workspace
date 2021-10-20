@@ -82,6 +82,10 @@ if (isset($_POST['reserve'])) {
     }
 }
 
+if (isset($_POST['reserveNotLoggedIn'])) {
+    header("location: protoLogin.php?please=true");
+}
+
 function pre_r( $array ) {
     echo '<pre>';
     print_r($array);

@@ -6,6 +6,10 @@
         if (isset($_GET['status'])) {
             echo "<p>Incorrect username or password. Please try again.</p>";
         }
+
+        if (isset($_GET['please'])) {
+            echo "<p>Please log in or register to reserve a room.</p>";
+        }
     ?>
     <div class="container">
         <div class="row">
@@ -99,7 +103,5 @@
             </div>
         </div>
     </div>
-</body>
 
-
-</html>
+<?php include_once 'footer.php' ?>

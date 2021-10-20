@@ -62,3 +62,5 @@ echo "<h1>Your Reservations</h1>";
     </div>
 
 </div>
+
+<?php include_once 'footer.php' ?>

@@ -20,7 +20,7 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a class="navbar-brand" href="protoMain.php">Group 12 Hotel Reservation System</a></li>
             <li class="nav-item"><a class="nav-link" href="">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Hotel Buildings</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotelbuildings.php">Hotel Buildings</a></li>
         </ul>
         <ul class="navbar-nav">
             <?php 
