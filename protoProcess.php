@@ -3,6 +3,7 @@
 $mysqli = new mysqli('localhost', 'root', '', 'userlog') or die(mysqli_error($mysqli));
 
 //$username = "hi";
+// update properties table to include a data field for image names
 
 // ========================================================================
 // need to update conditional to not allow duplicate records in database
@@ -29,6 +30,7 @@ if (isset($_POST['login'])) {
             //echo "<br> id: ". $row["id"]. " - Name: ". $row["username"]. " " . $row["email"] . " " . $row["password"] . "<br>";
             session_start();
             $_SESSION['loginName'] = $username;
+            $_SESSION['id'] = $row['id'];
             // email variable in session?
             header("location: protoMain.php");
             exit();
@@ -45,6 +47,8 @@ if (isset($_POST['reserve'])) {
     // grab propId and username to be used in following queries
     $propId = $_POST['propId'];
     $username = $_POST['loginName'];
+    //echo "$username";
+    //$userId = $_POST['userId'];
     
     // get unique ID from user logged in using username
     $fetchId = $mysqli->query("SELECT id FROM users WHERE username='$username'") or die($mysqli->error());
@@ -68,7 +72,7 @@ if (isset($_POST['reserve'])) {
     }
     else {
         // query to insert new reservation in reservation table
-        $mysqli->query("INSERT INTO reservations (id, propId, totalCost) VALUES('$propId', '$userId', '$price')") or die($mysqli->error);
+        $mysqli->query("INSERT INTO reservations (id, propId, totalCost) VALUES('$userId', '$propId', '$price')") or die($mysqli->error);
 
         // query to decrement availability number from property reserved
         $availability --;

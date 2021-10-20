@@ -102,9 +102,10 @@
                 <!-- make conditional statement for how the form works when user is not logged
                 in and when user is logged in -->
                 <form action="protoProcess.php" method="POST">
-                    <input type="hidden" value="1" name="propId">
+                    <input type="hidden" value="YMQPF" name="propId">
                     <?php 
                     echo "<input type='hidden' value='" . $_SESSION['loginName'] . "' name='loginName'>";
+                    //echo "<input type='hidden' value='" . $_SESSION['id'] . "' name='loginName'>";
                     ?>
                     <div class="card-body">
                         <button type="submit" class="btn btn-primary" name="reserve">Reserve!</button>
