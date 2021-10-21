@@ -103,13 +103,14 @@
                 in and when user is logged in -->
                 <form action="protoProcess.php" method="POST">
                     <input type="hidden" value="YMQPF" name="propId">
-                    <?php 
-                    echo "<input type='hidden' value='" . $_SESSION['loginName'] . "' name='loginName'>";
-                    //echo "<input type='hidden' value='" . $_SESSION['id'] . "' name='loginName'>";
+                    <?php if (isset($_SESSION['loginName'])) {
+                        echo "<input type='hidden' value='" . $_SESSION['loginName'] . "' name='loginName'>";
+                        echo "<div class='card-body'><button type='submit' class='btn btn-primary' name='reserve'>Reserve!</button></div>";
+                    }
+                    else {
+                        echo "<div class='card-body'><button type='submit' class='btn btn-primary' name='reserveNotLoggedIn'>Reserve!</button></div>";
+                    }
                     ?>
-                    <div class="card-body">
-                        <button type="submit" class="btn btn-primary" name="reserve">Reserve!</button>
-                    </div>
                 </form>
             </div>
         </div>
