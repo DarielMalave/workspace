@@ -7,7 +7,7 @@ $fetch = $mysqli->query("SELECT * FROM buildings") or die($mysqli->error());
 <div class="container">
     <h1>Hotel Buildings</h1>
     <div class="row">
-    <?php while ($rows = $fetch->fetch_assoc()): ?>
+        <?php while ($rows = $fetch->fetch_assoc()): ?>
         <div class="col-md-4" style="padding-bottom: 50px;">
             <div class="card mx-auto" style="width: 18rem;">
                 <img class="card-img-top" src="img/standardMagnolia.jpg" alt="Card image cap">
@@ -18,13 +18,24 @@ $fetch = $mysqli->query("SELECT * FROM buildings") or die($mysqli->error());
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item"><strong>Includes: </strong><?php echo $rows['amenities'] ?></li>
                 </ul>
-                    <div class="card-body">
-                    <input type="hidden">
-                    <a href="protoMain.php"><button type="button" class="btn btn-primary">Check Out!</button></a>
-                    </div>
+                <div class="card-body">
+                    <?php if (isset($_SESSION['loginName'])): ?>
+                    <form action="buildingpage.php" method="POST">
+                        <input type="hidden" name="hotelName" value="<?php echo $rows['hotelName'] ?>">
+                        <a href="protoMain.php"><button type="submit" class="btn btn-primary">Check Out!</button></a>
+                    </form>
+
+                    <?php else: ?>
+                    <form action="protoProcess.php" method="POST">
+                        <button type='submit' class='btn btn-primary' name='reserveNotLoggedIn'>Reserve!</button>
+                    </form>
+
+
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    <?php endwhile; ?>
+        <?php endwhile; ?>
     </div>
 </div>
 
